@@ -107,9 +107,8 @@ cool_lecturer = Lecturer('Aboba', 'Alba')
 cool_lecturer.courses_attached += ['PHP']
 
 cool_lecturer1 = Lecturer('Derji', 'Dverb')
-cool_lecturer1.courses_attached += ['1C']
+cool_lecturer1.courses_attached += ['PHP']
 cool_lecturer1.courses_attached += ['C#']
-# cool_lecturer1.courses_attached += ['PHP']
 
 cool_reviewer = Reviewer('Alex', 'Bolt')
 
@@ -129,24 +128,24 @@ cool_mentor.rate_hw(best_student, 'Python', 10)
 cool_mentor.rate_hw(best_student, 'Python', 8)
 cool_mentor.rate_hw(best_student, 'Python', 10)
 
-best_student.rate_lecturer(cool_lecturer, 'PHP', 10)
-best_student.rate_lecturer(cool_lecturer, 'PHP', 3)
-best_student.rate_lecturer(cool_lecturer, 'PHP', 7)
+best_student1.rate_lecturer(cool_lecturer, 'PHP', 10)
+best_student1.rate_lecturer(cool_lecturer, 'PHP', 3)
+best_student1.rate_lecturer(cool_lecturer, 'PHP', 7)
 
-best_student.rate_lecturer(cool_lecturer1, 'C#', 10)
-best_student.rate_lecturer(cool_lecturer1, 'C#', 8)
-best_student.rate_lecturer(cool_lecturer1, 'C#', 4)
+best_student.rate_lecturer(cool_lecturer1, 'PHP', 10)
+best_student.rate_lecturer(cool_lecturer1, 'PHP', 8)
+best_student.rate_lecturer(cool_lecturer1, 'PHP', 4)
 
 # print(best_student.grades)
 # print(best_student1.grades)
-print(cool_lecturer.grades)
-print(cool_lecturer1.grades)
-# print(cool_reviewer)
-# print(cool_lecturer)
-# print(best_student)
+# print(cool_lecturer.grades)
+# print(cool_lecturer1.grades)
+print(cool_reviewer)
+print(cool_lecturer)
+print(best_student)
 # print(best_student1)
-# print(cool_lecturer > cool_lecturer1)
-# print(best_student > best_student1)
+print(cool_lecturer > cool_lecturer1)
+print(best_student > best_student1)
 
 student_list = [best_student, best_student1]
 lecturer_list = [cool_lecturer, cool_lecturer1]
@@ -161,14 +160,16 @@ def avg_rate_students_course(students=student_list):
     return round(avg_grade, 2)
 
 
-# print(avg_rate_students_course())
+print(avg_rate_students_course())
 
 
 def avg_rate_lecturer_course(lecturers=lecturer_list):
     grades_list = []
     for lecturer in lecturers:
-        for grades in lecturer.grades['C#']:
+        for grades in lecturer.grades['PHP']:
             grades_list.append(grades)
     avg_grade = sum(grades_list) / len(grades_list)
     return round(avg_grade, 2)
+
+
 print(avg_rate_lecturer_course())
